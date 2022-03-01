@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Aleo:wght@300&family=Katibeh&family=Roboto:wght@100&display=swap');
+
+body{
+    background-color: rgb(144, 88, 255);
+}
+
+
+.pantalla{
+    border: 1.5px;
+    border-style: solid;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 800px;
+    background-color: rgb(255, 255, 255);
+}
+
+.container-oscuro{
+   background-color: rgb(0, 0, 0);
+}
+
+button{
+    width: 23.86%;
+    padding: 15px 0;
+    text-align: center;
+    cursor: pointer;
+    background: rgb(200, 200, 200);
+    border: 1px rgb(150, 150, 150 );
+    border-style: solid;
+}
+
+button:hover{
+    background: rgb(190, 190, 190);
+}
+
+button:active{
+    width:23%;
+}
+
+h3, h5{
+    text-align: end;
+}
+
+.letrasClaras{
+    color:rgb(255, 255, 255);
+}
+
+.botones-oscuros{
+    background-color: rgb(58, 57, 58);
+}
+
+h1{
+    font-family: 'Roboto', sans-serif;
+    background-color: rgb(144, 88, 255);
+    position: sticky;
+    top: 0;
+}
+
+.calculator{
+    border: 2px;
+    border-style: solid;
+}
+
+.luz{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin:30px
+}
+
+i{
+    padding: 3px 4px 2px 4px;
+}
+
+.solAct, .lunaAct{
+    background-color: rgb(59, 15, 144) ;
+    border-color: rgb(59, 15, 144 ); 
+    border-radius: 50px;
+}
+
+.lunaDes, .solAct, .lunaAct, .SolDes{
+    cursor:pointer;
+}
+
+.solDes, .lunaDes{
+    background-color: rgb(144, 88, 255);
+    border-color:  rgb(144, 88, 255);
+    border-radius: 50px;
+}
+
+.botton{
+    border-style:solid;
+    border-radius:50px;
+}
+
+.bordes-oscuros{
+    border-color:rgb(255, 255, 255);
+}
