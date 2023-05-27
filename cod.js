@@ -9,7 +9,7 @@ var cuenta = "";
 var segundoN = "";
 
 var reiniciar = document.querySelector(".c");
-var porcentaje = document.querySelector(".porcentaje");
+var pi = document.querySelector(".pi");
 var exponente = document.querySelector(".exponente");
 var raiz = document.querySelector(".raiz");
 var n1 = document.querySelector(".num1");
@@ -47,6 +47,28 @@ function bC(){
     seguir = true;
     cuenta = "";
     segundoN = "";
+}
+
+function bPi(){
+    pantalla += "π"; 
+    formacion.innerHTML = pantalla;
+    if (seguir == true){
+        primerN += Math.PI;
+    }
+    else{
+        segundoN += Math.PI;
+    }    
+}
+
+function nDecimal(){
+    pantalla += "."; 
+    formacion.innerHTML = pantalla;
+    if (seguir == true){
+        primerN += ".";
+    }
+    else{
+        segundoN += ".";
+    }     
 }
 
 function b1(){
@@ -175,6 +197,11 @@ function bResta(){
     if (cuenta !== ""){
         alert("Ya eligió un operador");
     }
+    else if(primerN == ""){
+        primerN = "-";
+        pantalla += "-";
+        formacion.innerHTML = pantalla; 
+    }
     else{
         pantalla += "-"; 
         cuenta = "-";
@@ -207,38 +234,61 @@ function bDivision(){
     }
 }
 
-function bIgual(){
-    if (cuenta == "+"){
-        resultado.innerHTML = parseInt(primerN) + parseInt(segundoN);
-        primerN = parseInt(primerN) + parseInt(segundoN);
-        seguir = true;
-        cuenta = "";
-        segundoN = "";
-    }
-    else if (cuenta == "-"){
-        resultado.innerHTML = parseInt(primerN) - parseInt(segundoN);
-        primerN = parseInt(primerN) + parseInt(segundoN);
-        seguir = true;
-        cuenta = "";
-        segundoN = "";
-    }
-    else if (cuenta == "x"){
-        resultado.innerHTML = parseInt(primerN) * parseInt(segundoN);
-        primerN = parseInt(primerN) + parseInt(segundoN);
-        seguir = true;
-        cuenta = "";
-        segundoN = "";
-    }
-    else if (cuenta == "÷"){
-        resultado.innerHTML = parseInt(primerN) / parseInt(segundoN);
-        primerN = parseInt(primerN) + parseInt(segundoN);
-        seguir = true;
-        cuenta = "";
-        segundoN = "";
+function bExponente(){
+    if (cuenta !== ""){
+        alert("Ya eligió un operador");
     }
     else{
-        resultado.innerHTML = parseInt(primerN);
+        pantalla += "^"; 
+        cuenta = "^";
+        formacion.innerHTML = pantalla;
+        seguir = false;
     }
+}
+
+function bRaiz(){
+    if (cuenta !== ""){
+        alert("Ya eligió un operador");
+    }
+    else{
+        pantalla += "√"; 
+        cuenta = "√";
+        formacion.innerHTML = pantalla;
+        seguir = false;
+    }    
+}
+
+function bIgual(){
+    if (primerN == NaN){
+        primerN = "0";
+    }
+    if (cuenta == "+"){
+        resultado.innerHTML = Number(primerN) + Number(segundoN);
+        primerN = Number(primerN) + Number(segundoN);
+    }
+    else if (cuenta == "-"){
+        resultado.innerHTML = Number(primerN) - Number(segundoN);
+        primerN = Number(primerN) - Number(segundoN);
+    }
+    else if (cuenta == "x"){
+        resultado.innerHTML = Number(primerN) * Number(segundoN);
+        primerN = Number(primerN) * Number(segundoN);
+    }
+    else if (cuenta == "÷"){
+        resultado.innerHTML = Number(primerN) / Number(segundoN);
+        primerN = Number(primerN) / Number(segundoN);
+    }
+    else if (cuenta == "^"){
+        resultado.innerHTML = Math.pow(primerN, segundoN);
+        primerN = Math.pow(primerN, segundoN);      
+    }
+    if (cuenta == "√"){
+        resultado.innerHTML = Math.sqrt(primerN);
+        primerN = Math.sqrt(primerN);      
+    }
+    seguir = true;
+    cuenta = "";
+    segundoN = "";  
 }
 
 function luminar(){
@@ -250,7 +300,7 @@ function luminar(){
     h3.classList.remove("letrasClaras");
     h5.classList.remove("letrasClaras");
     reiniciar.classList.remove("letrasClaras", "botones-oscuros");
-    porcentaje.classList.remove("letrasClaras", "botones-oscuros");
+    pi.classList.remove("letrasClaras", "botones-oscuros");
     exponente.classList.remove("letrasClaras", "botones-oscuros");
     raiz.classList.remove("letrasClaras", "botones-oscuros");
     n1.classList.remove("letrasClaras", "botones-oscuros");
@@ -282,7 +332,7 @@ function oscurecer(){
     h3.classList.add("letrasClaras");
     h5.classList.add("letrasClaras");
     reiniciar.classList.add("letrasClaras", "botones-oscuros");
-    porcentaje.classList.add("letrasClaras", "botones-oscuros");
+    pi.classList.add("letrasClaras", "botones-oscuros");
     exponente.classList.add("letrasClaras", "botones-oscuros");
     raiz.classList.add("letrasClaras", "botones-oscuros");
     n1.classList.add("letrasClaras", "botones-oscuros");

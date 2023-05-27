@@ -4,7 +4,6 @@ body{
     background-color: rgb(144, 88, 255);
 }
 
-
 .pantalla{
     border: 1.5px;
     border-style: solid;
@@ -23,7 +22,7 @@ body{
 }
 
 button{
-    width: 23.86%;
+    width: 23.90%;
     padding: 15px 0;
     text-align: center;
     cursor: pointer;
@@ -76,6 +75,7 @@ i{
 }
 
 .solAct, .lunaAct{
+    transition: background-color 0.5s;
     background-color: rgb(59, 15, 144) ;
     border-color: rgb(59, 15, 144 ); 
     border-radius: 50px;
@@ -86,6 +86,7 @@ i{
 }
 
 .solDes, .lunaDes{
+    transition: background-color 0.5s;
     background-color: rgb(144, 88, 255);
     border-color:  rgb(144, 88, 255);
     border-radius: 50px;
